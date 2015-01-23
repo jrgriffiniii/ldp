@@ -39,9 +39,9 @@ describe "Ldp::Client" do
   end
 
   let(:mock_conn) do
-    test = Faraday.new do |builder|
-      builder.adapter :test, conn_stubs do |stub|
-      end
+    Faraday.new do |builder|
+      builder.request :basic_auth, 'login', 'pass'
+      builder.adapter :test, conn_stubs
     end
 
   end
@@ -131,9 +131,10 @@ describe "Ldp::Client" do
     end
 
     it "should set default Content-type" do
-      subject.post "a_container", 'foo' do |req|
+      resp = subject.post "a_container", 'foo' do |req|
         expect(req.headers).to eq({ "Content-Type" => "text/turtle" })
       end
+      expect(resp.env.request_headers['Authorization']).to match /^Basic \w+==$/
     end
 
     it "should set headers" do
