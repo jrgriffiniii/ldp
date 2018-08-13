@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/samvera/ldp.png?branch=master)](https://travis-ci.org/samvera/ldp)
 [![Version](https://badge.fury.io/rb/ldp.png)](http://badge.fury.io/rb/ldp)
-[![Dependencies](https://gemnasium.com/samvera/ldp.png)](https://gemnasium.com/samvera/ldp)
 [![Coverage Status](https://coveralls.io/repos/github/samvera/ldp/badge.svg?branch=master)](https://coveralls.io/github/samvera/ldp?branch=master)
 
 Linked Data Platform client library for Ruby
