@@ -16,3 +16,8 @@ if ENV['RAILS_VERSION']
     gem 'rails', ENV['RAILS_VERSION']
   end
 end
+
+case ENV['RAILS_VERSION']
+when /^5.1/
+  gem 'rack', '~> 1.6'
+end
