@@ -8,3 +8,11 @@ gem 'byebug', platforms: [:mri]
 gem 'activesupport'
 gem 'capybara_discoball', '~> 0.0.2'
 gem 'derby',              '~> 0.1.0'
+
+if ENV['RAILS_VERSION']
+  if ENV['RAILS_VERSION'] == 'edge'
+    gem 'rails', github: 'rails/rails'
+  else
+    gem 'rails', ENV['RAILS_VERSION']
+  end
+end
